@@ -19,6 +19,9 @@ $search_box = @$_REQUEST['search_box'];
 $i=1;
 	$row_cari = array();
 	$sql_cari = mysqli_query($conn, "SELECT * from jam where jam like '$search_box%' order by kode_jam desc LIMIT $posisi,$batas");
+	if(@$_REQUEST['akses']=='android'){
+		$sql_cari = mysqli_query($conn, "SELECT * from jam order by kode_jam asc");
+	}
 	while($r1 = mysqli_fetch_assoc($sql_cari)){
 		
 	        $temp_cari = array(

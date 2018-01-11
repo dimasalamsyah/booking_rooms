@@ -19,6 +19,9 @@ $search_box = @$_REQUEST['search_box'];
 $i=1;
 	$row_cari = array();
 	$sql_cari = mysqli_query($conn, "SELECT * from ruangan where nama_ruangan like '$search_box%' order by nama_ruangan desc LIMIT $posisi,$batas");
+	if(@$_REQUEST['akses']=='android'){
+		$sql_cari = mysqli_query($conn, "SELECT * from ruangan order by nama_ruangan asc");
+	}
 	while($r1 = mysqli_fetch_array($sql_cari)){
 		
 	        $temp_cari = array(
