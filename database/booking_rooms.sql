@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.4
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Apr 23, 2017 at 03:29 AM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 5.6.19
+-- Host: 127.0.0.1
+-- Generation Time: 12 Jan 2018 pada 12.24
+-- Versi Server: 10.1.29-MariaDB
+-- PHP Version: 7.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `daemons`
+-- Struktur dari tabel `daemons`
 --
 
 CREATE TABLE `daemons` (
@@ -34,7 +36,7 @@ CREATE TABLE `daemons` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dosen`
+-- Struktur dari tabel `dosen`
 --
 
 CREATE TABLE `dosen` (
@@ -49,7 +51,7 @@ CREATE TABLE `dosen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `dosen`
+-- Dumping data untuk tabel `dosen`
 --
 
 INSERT INTO `dosen` (`kode_dosen`, `nama_dosen`, `tanggal_lahir`, `tempat_lahir`, `alamat`, `no_tlp`, `pic`, `tanggal_update`) VALUES
@@ -65,7 +67,7 @@ INSERT INTO `dosen` (`kode_dosen`, `nama_dosen`, `tanggal_lahir`, `tempat_lahir`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gambar`
+-- Struktur dari tabel `gambar`
 --
 
 CREATE TABLE `gambar` (
@@ -77,7 +79,7 @@ CREATE TABLE `gambar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `gambar`
+-- Dumping data untuk tabel `gambar`
 --
 
 INSERT INTO `gambar` (`id`, `nama`, `ukuran`, `tipe`, `username`) VALUES
@@ -87,7 +89,7 @@ INSERT INTO `gambar` (`id`, `nama`, `ukuran`, `tipe`, `username`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gammu`
+-- Struktur dari tabel `gammu`
 --
 
 CREATE TABLE `gammu` (
@@ -95,7 +97,7 @@ CREATE TABLE `gammu` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `gammu`
+-- Dumping data untuk tabel `gammu`
 --
 
 INSERT INTO `gammu` (`Version`) VALUES
@@ -104,7 +106,7 @@ INSERT INTO `gammu` (`Version`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inbox`
+-- Struktur dari tabel `inbox`
 --
 
 CREATE TABLE `inbox` (
@@ -123,7 +125,7 @@ CREATE TABLE `inbox` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `inbox`
+-- Dumping data untuk tabel `inbox`
 --
 
 INSERT INTO `inbox` (`UpdatedInDB`, `ReceivingDateTime`, `Text`, `SenderNumber`, `Coding`, `UDH`, `SMSCNumber`, `Class`, `TextDecoded`, `ID`, `RecipientID`, `Processed`) VALUES
@@ -145,7 +147,7 @@ INSERT INTO `inbox` (`UpdatedInDB`, `ReceivingDateTime`, `Text`, `SenderNumber`,
 ('2016-06-20 02:12:40', '2016-06-20 02:12:20', '00450064006900740062006F006F006B0069006E00670023004B005200300030003700300039002E00300030003200310030003600320030003100360023003200300037002300310033002E00300030002300320034002D00300036002D003200300031003600230062006500720068006100730069006C', '+628979598671', 'Default_No_Compression', '', '+628964011092', -1, 'Editbooking#KR00709.0021062016#207#13.00#24-06-2016#berhasil', 162, '', 'true');
 
 --
--- Triggers `inbox`
+-- Trigger `inbox`
 --
 DELIMITER $$
 CREATE TRIGGER `inbox_timestamp` BEFORE INSERT ON `inbox` FOR EACH ROW BEGIN
@@ -159,7 +161,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `info_sms`
+-- Struktur dari tabel `info_sms`
 --
 
 CREATE TABLE `info_sms` (
@@ -175,7 +177,7 @@ CREATE TABLE `info_sms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `info_sms`
+-- Dumping data untuk tabel `info_sms`
 --
 
 INSERT INTO `info_sms` (`id_info`, `kode_pembooking`, `nama_pembooking`, `jabatan`, `no_tlp`, `pesan`, `tgl_pesan`, `status`, `user`) VALUES
@@ -206,7 +208,7 @@ INSERT INTO `info_sms` (`id_info`, `kode_pembooking`, `nama_pembooking`, `jabata
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jam`
+-- Struktur dari tabel `jam`
 --
 
 CREATE TABLE `jam` (
@@ -215,7 +217,7 @@ CREATE TABLE `jam` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jam`
+-- Dumping data untuk tabel `jam`
 --
 
 INSERT INTO `jam` (`kode_jam`, `jam`) VALUES
@@ -239,7 +241,7 @@ INSERT INTO `jam` (`kode_jam`, `jam`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `karyawan`
+-- Struktur dari tabel `karyawan`
 --
 
 CREATE TABLE `karyawan` (
@@ -255,7 +257,7 @@ CREATE TABLE `karyawan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `karyawan`
+-- Dumping data untuk tabel `karyawan`
 --
 
 INSERT INTO `karyawan` (`kode_karyawan`, `nama_karyawan`, `tanggal_lahir`, `tempat_lahir`, `alamat`, `no_tlp`, `username`, `password`, `level`) VALUES
@@ -274,7 +276,7 @@ INSERT INTO `karyawan` (`kode_karyawan`, `nama_karyawan`, `tanggal_lahir`, `temp
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas`
+-- Struktur dari tabel `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -286,7 +288,7 @@ CREATE TABLE `kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kelas`
+-- Dumping data untuk tabel `kelas`
 --
 
 INSERT INTO `kelas` (`id`, `nama_kelas`, `tingkat`, `shift`, `pa`) VALUES
@@ -304,7 +306,7 @@ INSERT INTO `kelas` (`id`, `nama_kelas`, `tingkat`, `shift`, `pa`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mahasiswa`
+-- Struktur dari tabel `mahasiswa`
 --
 
 CREATE TABLE `mahasiswa` (
@@ -318,7 +320,7 @@ CREATE TABLE `mahasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mahasiswa`
+-- Dumping data untuk tabel `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`nim`, `nama`, `id_kelas`, `jurusan`, `tlp`, `pic`, `last_update`) VALUES
@@ -338,7 +340,7 @@ INSERT INTO `mahasiswa` (`nim`, `nama`, `id_kelas`, `jurusan`, `tlp`, `pic`, `la
 -- --------------------------------------------------------
 
 --
--- Table structure for table `matakuliah`
+-- Struktur dari tabel `matakuliah`
 --
 
 CREATE TABLE `matakuliah` (
@@ -347,7 +349,7 @@ CREATE TABLE `matakuliah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `matakuliah`
+-- Dumping data untuk tabel `matakuliah`
 --
 
 INSERT INTO `matakuliah` (`id`, `mata_kuliah`) VALUES
@@ -367,7 +369,7 @@ INSERT INTO `matakuliah` (`id`, `mata_kuliah`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `outbox`
+-- Struktur dari tabel `outbox`
 --
 
 CREATE TABLE `outbox` (
@@ -392,7 +394,7 @@ CREATE TABLE `outbox` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Triggers `outbox`
+-- Trigger `outbox`
 --
 DELIMITER $$
 CREATE TRIGGER `outbox_timestamp` BEFORE INSERT ON `outbox` FOR EACH ROW BEGIN
@@ -412,7 +414,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `outbox_multipart`
+-- Struktur dari tabel `outbox_multipart`
 --
 
 CREATE TABLE `outbox_multipart` (
@@ -428,7 +430,7 @@ CREATE TABLE `outbox_multipart` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pbk`
+-- Struktur dari tabel `pbk`
 --
 
 CREATE TABLE `pbk` (
@@ -441,7 +443,7 @@ CREATE TABLE `pbk` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pbk_groups`
+-- Struktur dari tabel `pbk_groups`
 --
 
 CREATE TABLE `pbk_groups` (
@@ -452,11 +454,12 @@ CREATE TABLE `pbk_groups` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pemesan`
+-- Struktur dari tabel `pemesan`
 --
 
 CREATE TABLE `pemesan` (
   `kode_pemesan` varchar(50) NOT NULL,
+  `password` varchar(30) NOT NULL,
   `nama_pemesan` varchar(50) NOT NULL,
   `jabatan` varchar(50) NOT NULL,
   `tgl_lahir` date NOT NULL,
@@ -466,27 +469,27 @@ CREATE TABLE `pemesan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pemesan`
+-- Dumping data untuk tabel `pemesan`
 --
 
-INSERT INTO `pemesan` (`kode_pemesan`, `nama_pemesan`, `jabatan`, `tgl_lahir`, `tempat_lahir`, `no_tlp`, `alamat`) VALUES
-('12001', 'anggit', 'mahasiswa', '2016-05-22', 'bekasi', '089877890', 'bekasi'),
-('13', 'd', 'mahasiswa', '2016-05-17', 'bekasi', '0908789', 'bekasi'),
-('13000333', 'fahmi', 'mahasiswa', '2016-06-28', 'bekasi', '082298813402', 'bekasi'),
-('1301', 'Kuncoro', 'mahasiswa', '2016-05-11', 'bekaksi', '09090', 'bekasi'),
-('1302', 'Melisa', 'dosen', '2016-05-18', 'bekasi', '0890', 'bekasi'),
-('1303', 'hadi', 'mahasiswa', '2016-05-19', 'jakarta', '089653518514', 'jakarta'),
-('1304', 'Salomo', 'karyawan', '2016-05-26', 'bekasi', '08980', 'bekasi'),
-('1305', 'yoga', 'karyawan', '2016-05-12', 'jakarta', '080', 'bekasi'),
-('130975664', 'rido', 'mahasiswa', '2016-06-16', 'bekasi', '089616796793', 'bekasi'),
-('333444', 'joko', 'mahasiswa', '2016-06-07', 'bekasi', '085880544933', 'bekasi'),
-('e', 'd', 'dosen', '2016-05-18', 'jakarta', '089798', 'bekasi'),
-('ede', 'dimas', 'mahasiswa', '2016-05-18', 'dd', '08979598671', 'dd');
+INSERT INTO `pemesan` (`kode_pemesan`, `password`, `nama_pemesan`, `jabatan`, `tgl_lahir`, `tempat_lahir`, `no_tlp`, `alamat`) VALUES
+('12001', '', 'anggit', 'mahasiswa', '2016-05-22', 'bekasi', '089877890', 'bekasi'),
+('13', '', 'd', 'mahasiswa', '2016-05-17', 'bekasi', '0908789', 'bekasi'),
+('13000333', '', 'fahmi', 'mahasiswa', '2016-06-28', 'bekasi', '082298813402', 'bekasi'),
+('1301', '', 'Kuncoro', 'mahasiswa', '2016-05-11', 'bekaksi', '09090', 'bekasi'),
+('1302', '', 'Melisa', 'dosen', '2016-05-18', 'bekasi', '0890', 'bekasi'),
+('1303', '', 'hadi', 'mahasiswa', '2016-05-19', 'jakarta', '089653518514', 'jakarta'),
+('1304', '', 'Salomo', 'karyawan', '2016-05-26', 'bekasi', '08980', 'bekasi'),
+('1305', '', 'yoga', 'karyawan', '2016-05-12', 'jakarta', '080', 'bekasi'),
+('130975664', '', 'rido', 'mahasiswa', '2016-06-16', 'bekasi', '089616796793', 'bekasi'),
+('333444', '', 'joko', 'mahasiswa', '2016-06-07', 'bekasi', '085880544933', 'bekasi'),
+('e', '', 'd', 'dosen', '2016-05-18', 'jakarta', '089798', 'bekasi'),
+('ede', 'ede', 'dimas', 'mahasiswa', '2016-05-18', 'dd', '08979598671', 'dd');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pemesanan_detail`
+-- Struktur dari tabel `pemesanan_detail`
 --
 
 CREATE TABLE `pemesanan_detail` (
@@ -502,20 +505,24 @@ CREATE TABLE `pemesanan_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pemesanan_detail`
+-- Dumping data untuk tabel `pemesanan_detail`
 --
 
 INSERT INTO `pemesanan_detail` (`id`, `kode_pembooking`, `nama_pembooking`, `posisi`, `kode_ruangan`, `kode_jam`, `tgl`, `ket`, `pic`) VALUES
 (36, '130975664', 'rido', 'mahasiswa', 'KR007', 'KJ10', '2016-06-22', 'PES', 'bysms'),
 (37, '130975664', 'rido', 'mahasiswa', 'KR018', 'KJ08', '2016-06-19', 'PES', 'bysms'),
 (38, 'ede', 'dimas', 'mahasiswa', 'KR007', 'KJ13', '2016-06-24', 'BERHASIL', 'bysms'),
-(39, 'ede', 'dimas', 'mahasiswa', 'KR007', 'KJ15', '2016-06-21', 'YEYY', 'bysms'),
-(40, '333444', 'joko', 'mahasiswa', 'KR018', 'KJ10', '2016-06-23', 'BEM', '');
+(40, '333444', 'joko', 'mahasiswa', 'KR018', 'KJ10', '2016-06-23', 'BEM', ''),
+(42, 'ede', 'dimas', 'mahasiswa', 'KR018', 'KJ09', '2018-01-12', 'ubah', ''),
+(43, 'ede', 'dimas', 'mahasiswa', 'KR007', 'KJ08', '2018-01-11', 'KET', ''),
+(44, 'ede', 'dimas', 'mahasiswa', 'KR010', 'KJ08', '2018-01-11', 'KET', ''),
+(45, 'ede', 'dimas', 'mahasiswa', 'KR008', 'KJ08', '2018-01-11', 'KET', ''),
+(46, 'ede', 'dimas', 'mahasiswa', 'KR018', 'KJ08', '2018-01-11', 'keterangan', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pemesanan_header`
+-- Struktur dari tabel `pemesanan_header`
 --
 
 CREATE TABLE `pemesanan_header` (
@@ -526,7 +533,7 @@ CREATE TABLE `pemesanan_header` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pemesanan_header`
+-- Dumping data untuk tabel `pemesanan_header`
 --
 
 INSERT INTO `pemesanan_header` (`id`, `kode_pembooking`, `last_update`, `pic`) VALUES
@@ -540,7 +547,7 @@ INSERT INTO `pemesanan_header` (`id`, `kode_pembooking`, `last_update`, `pic`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penjadwalan_detail`
+-- Struktur dari tabel `penjadwalan_detail`
 --
 
 CREATE TABLE `penjadwalan_detail` (
@@ -556,7 +563,7 @@ CREATE TABLE `penjadwalan_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `penjadwalan_detail`
+-- Dumping data untuk tabel `penjadwalan_detail`
 --
 
 INSERT INTO `penjadwalan_detail` (`kode_transaksi`, `kode_dosen`, `kode_ruangan`, `kode_kelas`, `kode_matakuliah`, `kode_jam`, `hari`, `mulai`, `habis`) VALUES
@@ -567,7 +574,7 @@ INSERT INTO `penjadwalan_detail` (`kode_transaksi`, `kode_dosen`, `kode_ruangan`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penjadwalan_tahunajaran`
+-- Struktur dari tabel `penjadwalan_tahunajaran`
 --
 
 CREATE TABLE `penjadwalan_tahunajaran` (
@@ -577,7 +584,7 @@ CREATE TABLE `penjadwalan_tahunajaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `penjadwalan_tahunajaran`
+-- Dumping data untuk tabel `penjadwalan_tahunajaran`
 --
 
 INSERT INTO `penjadwalan_tahunajaran` (`id`, `tahun_ajaran_mulai`, `tahun_ajaran_akhir`) VALUES
@@ -587,7 +594,7 @@ INSERT INTO `penjadwalan_tahunajaran` (`id`, `tahun_ajaran_mulai`, `tahun_ajaran
 -- --------------------------------------------------------
 
 --
--- Table structure for table `petugas`
+-- Struktur dari tabel `petugas`
 --
 
 CREATE TABLE `petugas` (
@@ -601,7 +608,7 @@ CREATE TABLE `petugas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `petugas`
+-- Dumping data untuk tabel `petugas`
 --
 
 INSERT INTO `petugas` (`kode_petugas`, `username`, `password`, `jabatan`, `tanggal`, `pic`, `tanggal_update`) VALUES
@@ -613,7 +620,7 @@ INSERT INTO `petugas` (`kode_petugas`, `username`, `password`, `jabatan`, `tangg
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phones`
+-- Struktur dari tabel `phones`
 --
 
 CREATE TABLE `phones` (
@@ -632,7 +639,7 @@ CREATE TABLE `phones` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `phones`
+-- Dumping data untuk tabel `phones`
 --
 
 INSERT INTO `phones` (`ID`, `UpdatedInDB`, `InsertIntoDB`, `TimeOut`, `Send`, `Receive`, `IMEI`, `Client`, `Battery`, `Signal`, `Sent`, `Received`) VALUES
@@ -640,7 +647,7 @@ INSERT INTO `phones` (`ID`, `UpdatedInDB`, `InsertIntoDB`, `TimeOut`, `Send`, `R
 ('', '2016-06-20 03:37:43', '2016-06-20 02:40:06', '2016-06-20 03:37:53', 'yes', 'yes', '867749011573601', 'Gammu 1.32.0, Windows Server 2007, GCC 4.7, MinGW 3.11', 0, 36, 3, 2);
 
 --
--- Triggers `phones`
+-- Trigger `phones`
 --
 DELIMITER $$
 CREATE TRIGGER `phones_timestamp` BEFORE INSERT ON `phones` FOR EACH ROW BEGIN
@@ -657,7 +664,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ruangan`
+-- Struktur dari tabel `ruangan`
 --
 
 CREATE TABLE `ruangan` (
@@ -671,7 +678,7 @@ CREATE TABLE `ruangan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ruangan`
+-- Dumping data untuk tabel `ruangan`
 --
 
 INSERT INTO `ruangan` (`kode_ruangan`, `nama_ruangan`, `jenis_ruangan`, `tanggal`, `pic`, `tanggal_update`, `status`) VALUES
@@ -692,7 +699,7 @@ INSERT INTO `ruangan` (`kode_ruangan`, `nama_ruangan`, `jenis_ruangan`, `tanggal
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sentitems`
+-- Struktur dari tabel `sentitems`
 --
 
 CREATE TABLE `sentitems` (
@@ -718,7 +725,7 @@ CREATE TABLE `sentitems` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `sentitems`
+-- Dumping data untuk tabel `sentitems`
 --
 
 INSERT INTO `sentitems` (`UpdatedInDB`, `InsertIntoDB`, `SendingDateTime`, `DeliveryDateTime`, `Text`, `DestinationNumber`, `Coding`, `UDH`, `SMSCNumber`, `Class`, `TextDecoded`, `ID`, `SenderID`, `SequencePosition`, `Status`, `StatusError`, `TPMR`, `RelativeValidity`, `CreatorID`) VALUES
@@ -750,7 +757,7 @@ INSERT INTO `sentitems` (`UpdatedInDB`, `InsertIntoDB`, `SendingDateTime`, `Deli
 ('2016-06-19 13:08:29', '2016-06-19 13:08:00', '2016-06-19 13:08:29', NULL, '00730065006C0061006D0061007400200062006F006F006B0069006E006700200062006500720068006100730069006C0020006A0061006400770061006C002C0020006B006F00640065002000700065006D006500730061006E0061006E003A0020004B005200300030003700300038002E0030003000320030003000360032003000310036', '089616796793', 'Default_No_Compression', '', '+6289644000001', -1, 'selamat booking berhasil jadwal, kode pemesanan: KR00708.0020062016', 162, '', 1, 'SendingOKNoReport', -1, 148, 255, '');
 
 --
--- Triggers `sentitems`
+-- Trigger `sentitems`
 --
 DELIMITER $$
 CREATE TRIGGER `sentitems_timestamp` BEFORE INSERT ON `sentitems` FOR EACH ROW BEGIN
@@ -915,56 +922,68 @@ ALTER TABLE `sentitems`
 --
 ALTER TABLE `gambar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
 --
 -- AUTO_INCREMENT for table `inbox`
 --
 ALTER TABLE `inbox`
   MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
+
 --
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
 --
 -- AUTO_INCREMENT for table `matakuliah`
 --
 ALTER TABLE `matakuliah`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
 -- AUTO_INCREMENT for table `outbox`
 --
 ALTER TABLE `outbox`
   MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
+
 --
 -- AUTO_INCREMENT for table `pbk`
 --
 ALTER TABLE `pbk`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `pbk_groups`
 --
 ALTER TABLE `pbk_groups`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `pemesanan_detail`
 --
 ALTER TABLE `pemesanan_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
 --
 -- AUTO_INCREMENT for table `pemesanan_header`
 --
 ALTER TABLE `pemesanan_header`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `penjadwalan_detail`
 --
 ALTER TABLE `penjadwalan_detail`
   MODIFY `kode_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+
 --
 -- AUTO_INCREMENT for table `penjadwalan_tahunajaran`
 --
 ALTER TABLE `penjadwalan_tahunajaran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
