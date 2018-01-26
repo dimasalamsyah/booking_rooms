@@ -851,7 +851,7 @@ include '../koneksi/koneksi.php';
 
                        
                                     /*ajax comboxbox atasnama*/
-                                  
+                                  $('#combo_atas_nama').selectpicker('refresh');
                                   $.ajax({
                                   url: url_atasnama_edit,
                                   dataType: 'json',
@@ -864,7 +864,7 @@ include '../koneksi/koneksi.php';
                                          
                                          $("#combo_atas_nama").val(nama_edit);/*menaruh hasil nama edit*/
 
-                                         
+                                         console.log(nama_edit);
                                          $('#combo_atas_nama').selectpicker('refresh');
                                          $("#loading_add").html('');
                                       }

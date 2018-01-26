@@ -3,8 +3,8 @@
  include 'koneksi/koneksi.php';
 $warna = "#3786DD;";
 $warna_slide = "#d1e0e0";
-$image = "images/logo.jpg";
-$image_top ="images/logo.jpg";
+$image = "images/logo.png";
+$image_top ="images/logo.png";
 $koneksi = "koneksi/";
 $setting = "forms/";
 $foto1 = "forms/";

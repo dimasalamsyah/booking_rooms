@@ -15,22 +15,14 @@ if($option == 'update'){
 	
 	include '../../koneksi/koneksi.php';
 
-	//cek
-	$q = "SELECT count(id) from pemesanan_detail where kode_ruangan = '$curKelas' and kode_jam = '$curJam' and tgl = '$curDate' ";
-	$cek = mysqli_query($conn,$q);
-	$row_cek = mysqli_fetch_array($cek);
-	if($row_cek[0] != 0){
-		echo "full";
-	}else{
-		$id = @$_REQUEST['id'];
-		$query_save_d = mysqli_query($conn, "UPDATE pemesanan_detail set kode_ruangan = '$curKelas', kode_jam = '$curJam', tgl = '$curDate', ket = '$ket' where id = '$id' ");
+	$id = @$_REQUEST['id'];
+	$query_save_d = mysqli_query($conn, "UPDATE pemesanan_detail set kode_ruangan = '$curKelas', kode_jam = '$curJam', tgl = '$curDate', ket = '$ket' where id = '$id' ");
 
-		if($query_save_d){
-			echo "success";
-		}else{
-			echo "failed";
-		}
-	}	
+	if($query_save_d){
+		echo "success";
+	}else{
+		echo "failed";
+	}
 	
 		
 }else{

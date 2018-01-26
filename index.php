@@ -41,7 +41,7 @@
 		  		}
 		  	?>
 		  	    <div class="panel panel-primary" style="margin-top:10%;">
-			      <div class="panel-heading"><center><img src="images/logo.jpg" width="150px"></center></div>
+			      <div class="panel-heading"><center><img src="images/logo.png" width="150px"></center></div>
 			      <div class="panel-body" style="margin:10px;">
 			      		<form class="form-horizontal" action="cek_login.php" method="post">
 						  <div class="form-group">
